@@ -127,13 +127,6 @@ kubectl top pods -n <namespace>
 kubectl describe pod <pod> -n <namespace>
 ```
 
----
-
-
-                                          |                                    |
-
----
-
 ## ✅ Suggested Fixes (Based on Symptoms)
 
 | Symptom                              | Fix Recommendation                                      |
