@@ -1,7 +1,5 @@
 # 🚧 AWS Control Tower - Service Control Policies (SCPs)
 
-This repository provides a collection of production-ready **Service Control Policies (SCPs)** for securing and governing AWS Organizations managed by **AWS Control Tower**. SCPs are **deny-based**, meaning they do not grant permissions but restrict actions that IAM users and roles can perform in child accounts.
-
 ## 📘 What are SCPs?
 
 - **SCPs ≠ IAM policies**: SCPs limit what permissions **can be granted** by IAM.
