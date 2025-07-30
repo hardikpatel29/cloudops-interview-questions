@@ -43,7 +43,6 @@ This guide outlines various AWS-supported solutions for transferring petabytes o
 - Stable and low-latency.
 - Good for ongoing workloads after bulk migration.
 
-**🔗** [Learn more](https://aws.amazon.com/directconnect/)
 
 ---
 
@@ -55,7 +54,6 @@ This guide outlines various AWS-supported solutions for transferring petabytes o
 - No infrastructure setup.
 - Ideal for remote locations with global reach.
 
-**🔗** [Learn more](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)
 
 ---
 
@@ -67,8 +65,6 @@ This guide outlines various AWS-supported solutions for transferring petabytes o
 **✅ Pros**:
 - Simple setup for recurring or incremental transfers.
 - Supports filters, scheduling, and monitoring.
-
-**🔗** [Learn more](https://aws.amazon.com/datasync/)
 
 ---
 
