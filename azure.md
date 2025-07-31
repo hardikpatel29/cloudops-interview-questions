@@ -1,9 +1,5 @@
 # 🧪 DevOps Interview Questions & Answers (Senior Role)
 
-**Role**: Senior DevOps Engineer  
-**Compensation**: ₹22 LPA  
-**Rounds**: Technical Deep Dive – Round 1 & 2
-
 ---
 
 ## ✅ Questions & Answers
