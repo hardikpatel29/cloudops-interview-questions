@@ -1,11 +1,6 @@
 
 # 🛠️ 3-Tier Application Latency Troubleshooting Guide
 
-This guide outlines a step-by-step process to troubleshoot **increased latency** in a 3-tier application (Frontend → Backend/API → Database).  
-**Scenario**: Latency increases from 10ms to 40ms after 2 hours of runtime.
-
----
-
 ## 📌 Architecture Overview
 
 ```
