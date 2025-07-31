@@ -231,6 +231,4 @@ spec:
 - Missing files in S3 bucket
 - File permission issues after unpacking revision
 
----
 
-> ✅ Use this README to prep for DevOps/AWS/K8s interviews or share as part of your GitHub profile.
