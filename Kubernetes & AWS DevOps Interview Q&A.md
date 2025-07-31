@@ -231,4 +231,178 @@ spec:
 - Missing files in S3 bucket
 - File permission issues after unpacking revision
 
+---
 
+## CI/CD Pipelines  
+**Q:** _How do you run builds in multiple operating systems in a pipeline?_
+
+**A:**  
+Use a **matrix strategy** in your CI/CD tool to run builds on different OS environments.
+
+### GitHub Actions:
+```yaml
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Building on ${{ matrix.os }}"
+```
+
+### GitLab CI:
+```yaml
+linux-build:
+  tags: [linux]
+  script: ./build-linux.sh
+
+windows-build:
+  tags: [windows]
+  script: build-windows.bat
+```
+
+### Jenkins:
+Use `agent { label 'windows' }`, `agent { label 'linux' }` in declarative pipelines or run jobs on appropriately labeled nodes.
+
+---
+
+## Secret Management  
+**Q:** _How did you access HashiCorp Vault or any secret manager located in another AWS region?_
+
+**A:**
+
+### HashiCorp Vault:
+- Set `VAULT_ADDR` to the remote Vault endpoint.
+- Ensure network connectivity (via public endpoint, VPC peering, or Transit Gateway).
+```bash
+export VAULT_ADDR="https://vault.ap-southeast-1.mycompany.com"
+vault login <token>
+vault kv get secret/myapp
+```
+
+### AWS Secrets Manager:
+```bash
+aws secretsmanager get-secret-value   --secret-id mysecret   --region us-west-2
+```
+
+---
+
+
+## 502 Production Issue  
+**Q:** _The pod is running, but logs show a 502 error — how would you debug it?_
+
+**A:**
+
+1. Check pod logs:
+   ```bash
+   kubectl logs <pod>
+   ```
+
+2. Check readiness probe:
+   ```bash
+   kubectl describe pod <pod>
+   ```
+
+3. Curl the internal pod port:
+   ```bash
+   kubectl exec -it <pod> -- curl localhost:<port>
+   ```
+
+4. Check Ingress controller logs:
+   ```bash
+   kubectl logs -n ingress-nginx <controller-pod>
+   ```
+
+5. Check endpoints:
+   ```bash
+   kubectl get endpoints <service>
+   ```
+
+---
+
+## CrashLoopBackOff Troubleshooting  
+**Q:** _How do you fix a CrashLoopBackOff issue in a pod?_
+
+**A:**
+
+1. View previous logs:
+   ```bash
+   kubectl logs <pod> --previous
+   ```
+
+2. Describe pod for events:
+   ```bash
+   kubectl describe pod <pod>
+   ```
+
+3. Common causes:
+   - Incorrect entrypoint/command.
+   - Missing configs/secrets.
+   - Failing initContainers.
+   - OOMKilled or probe failures.
+
+---
+
+## Missing Services  
+**Q:** _If a service doesn’t appear in `kubectl get services`, what could be the problem?_
+
+**A:**
+
+- It may not have been created or applied.
+- Check across namespaces:
+  ```bash
+  kubectl get svc -A
+  ```
+- Validate YAML syntax:
+  ```bash
+  kubectl apply -f service.yaml --dry-run=client
+  ```
+
+---
+
+## Cluster Monitoring  
+**Q:** _How do you check node-level resource consumption in Kubernetes?_
+
+**A:**
+
+- Using Metrics Server:
+  ```bash
+  kubectl top node
+  ```
+
+- Describe node for allocatable resources:
+  ```bash
+  kubectl describe node <node-name>
+  ```
+
+- Or use observability tools:
+  - **Prometheus + Grafana**
+  - **Lens**
+  - **K9s**
+
+---
+
+## Container Crashes  
+**Q:** _What steps would you take if a container crashes immediately after starting?_
+
+**A:**
+
+1. View logs:
+   ```bash
+   kubectl logs <pod> --previous
+   ```
+
+2. Describe pod for detailed event info:
+   ```bash
+   kubectl describe pod <pod>
+   ```
+
+3. Check:
+   - Entrypoint errors
+   - Missing secrets/configs
+   - Port conflicts
+   - Image pull or permission errors
+
+---
