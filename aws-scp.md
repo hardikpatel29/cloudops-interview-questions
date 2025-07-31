@@ -97,8 +97,6 @@ Restrict access to only approved AWS regions such as `us-east-1` and `us-west-2`
 
 ```
 
-```
-
 ### 🔒 Enforce Mandatory Resource Tagging
 ```json
 {
