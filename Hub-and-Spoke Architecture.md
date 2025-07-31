@@ -1,11 +1,5 @@
 # 🌐 Hub-and-Spoke Architecture: AWS vs Azure (Multi-Region Private Communication)
 
-## 📖 Overview
-
-This repository explains and compares how to build a **Hub-and-Spoke network topology** across **two regions** using **AWS** and **Azure**, with focus on **private communication** between Virtual Networks (Azure) or VPCs (AWS).
-
----
-
 ## 🧩 Use Case
 
 - **Region A**: 5 networks (spoke)
