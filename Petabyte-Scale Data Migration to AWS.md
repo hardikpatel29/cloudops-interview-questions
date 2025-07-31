@@ -1,9 +1,5 @@
 # Petabyte-Scale Data Migration to AWS
 
-This guide outlines various AWS-supported solutions for transferring petabytes of data from on-premises or external systems to AWS cloud, along with recommendations and use cases.
-
----
-
 ## 📦 Use Cases
 
 - Migrate large-scale datasets (e.g., PBs of video, logs, scientific data) to AWS.
