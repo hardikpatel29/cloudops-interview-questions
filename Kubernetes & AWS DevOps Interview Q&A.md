@@ -1,8 +1,5 @@
 # DevOps Interview Q&A – Real-world EKS/Terraform/ArgoCD/AWS Answers
 
-This document contains factual, experience-based answers to real interview questions encountered in DevOps/Cloud Engineer roles, especially around Kubernetes (EKS), Terraform, Argo CD, Jenkins, and AWS services.
-
----
 
 ## 🔹 Tell me about yourself
 
