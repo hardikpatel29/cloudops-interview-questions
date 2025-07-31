@@ -97,21 +97,6 @@ Restrict access to only approved AWS regions such as `us-east-1` and `us-west-2`
 
 ```
 
-### 🔒 Prevent Leaving the Organization
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PreventLeaveOrg",
-      "Effect": "Deny",
-      "Action": "organizations:LeaveOrganization",
-      "Resource": "*"
-    }
-  ]
-}
-
 ```
 
 ### 🔒 Enforce Mandatory Resource Tagging
